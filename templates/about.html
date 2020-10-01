@@ -1,0 +1,87 @@
+{% extends "layout.html" %}
+{% block title %}About{% endblock %}
+
+{% block content %}
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/about.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+
+    <div class="page-head" hidden="true" id="page-head">
+        <div id="carouselExampleSlidesOnly" class="carousel slide carousel-fade" data-ride="carousel" data-interval="5000">
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img class="d-block w-100" src="{{ url_for('static', filename='img/skyler1.jpeg') }}" alt="Skyler Wiernik">
+                </div>
+                <div class="carousel-item">
+                    <img class="d-block w-100" src="{{ url_for('static', filename='img/skyler2.jpeg') }}" alt="Skyler Wiernik">
+                </div>
+            </div>
+        </div>
+    </div>
+    <h1>About me</h1>
+
+    <p class="mobile-paragraph">
+        My names Skyler Wiernik. I’m a highschool student at Lincoln Sudbury Regional Highschool in Sudbury Massachusetts. I’m also an aspiring software engineer. I’ve created apps, websites, browser extensions, and even programmed full size robots. I’ve worked on countless video projects both independently, and at SudburyTV, my town's local public broadcast institution. I’ve also worked with my school's IT department.
+    </p>
+
+    <h1>LSToday</h1>
+
+    <p class="mobile-paragraph">
+        LSToday is one of my largest projects. LSToday is an iOS app I developed for my school. It has received over 1200 downloads, from my school of roughly 1500 students. (Some of whom have Androids, which are not supported). Of these 1200 downloads, about 650 people use the app on a weekly basis, and 500-550 people use the app every school day. LSToday is a scheduling app that students use to keep track of their schedules.
+    </p>
+
+    <a href="projects/lstoday" target="_blank" class="mobile-paragraph">Learn more</a>
+    <a href="https://apps.apple.com/us/app/lstoday/id1462805790" target="_blank" class="mobile-paragraph">Download on the App Store!</a>
+
+    <p class="mobile-paragraph" style="color:gray">
+        Note: these numbers are based on the 2019-2020 school year, as covid-19 changed how LS operates, and made LSToday obsolete for the time being. Version 2.0 is LSToday is currently in development with new features, such as an anonymous way to contact school counselors, a school events page, and more. It is currently unclear whether the update will be released later this year, or for the 2020-2021 school year.
+    </p>
+
+    <h1>Warrior Robotics</h1>
+
+    <p class="mobile-paragraph">
+        Warrior Robotics is an <a href="https://www.firstinspires.org/robotics/frc" target="_blank">FRC</a> team of roughly 30 students based in Sudbury Massachusetts. FRC is a robotics competition, similar to battle bots, where teams compete to build the best robot to complete a challenge. Every year, we build a new bot and compete against over a hundred other teams around the New England district. I’ve been a member of Warrior Robotics since 2018. In 2020, I was appointed as the head of the software team. My role consists of teaching younger members the basics of java, along with WPIlib (the software library we use to interact with the robot), managing the structure and health of our code base, and of course writing robot code. I’m also one of the team's 2 drivers, which means I physically help to control the robot during our matches.
+    </p>
+
+    <a href="projects/robotics" target="_blank" class="mobile-paragraph">Learn More</a>
+    <br>
+    <a href="/out/robotics" target="_blank" class="mobile-paragraph">Checkout our teams website</a>
+
+    <h1>Video</h1>
+
+    <p class="mobile-paragraph">
+        I film, direct, and edit local events around my community for SudburyTV. These events include highschool sports games, charity concerts, town legislative events, and more. I’ve been with SudburyTV since 2018. I organized, edited, and directed all of the video for <a href="https://sudbury.vod.castus.tv/vod/?video=37444725-5664-4c20-812f-e0e7144aa038&nav=search%2Fcambodia" target="_blank"><b>Jam for Cambodia</b></a>, a local charity concert in the neighboring town of Lincoln. During the COVID-19 pandemic, I live streamed multiple church services for the Sudbury United Methodist Church. I put on these live streams by myself. Independently, I film all of the Hockey games for the LS Hockey team, to be uploaded to their video analysis platform Hudl, to be reviewed for more efficient practice.
+    </p>
+
+    <a href="projects/video-projects" target="_blank" class="mobile-paragraph">See More</a>
+
+    <h1>IT Internship</h1>
+
+    <p class="mobile-paragraph">
+        I interned with the LS IT department for a semester during my free time, where I helped to manage and maintain the school’s IT equipment. This included repairing MacBook Airs, and multiple models of Chromebooks, servicing printers and iMacs around the school, and helping faculty to troubleshoot IT issues. I learned what it was like to manage a large number of differently functioning devices in a professional environment.
+    </p>
+
+    <h1>G-Switcher</h1>
+
+    <p class="mobile-paragraph">
+        G-Switcher is a cross-platform browser extension I developed to  make it easier to switch between Google accounts. This is especially useful for switching between a personal, and school/work account. Oftentimes our personal accounts are set as the default account, while we have our school/work account as secondary accounts. When working, it's often annoying to have to continually use Google's UI to switch to your account when going between Gmail, Google Classroom, Google Drive, and other Google services. I found this especially irritating during remote learning. To solve this, I created G-Switcher.
+    </p>
+
+    <a href="projects/g-switcher" target="_blank" class="mobile-paragraph">Learn more</a>
+    <a href="https://www.youtube.com/watch?v=wOrD7X3uIZY&ab_channel=SkylerWiernik" target="_blank" class="mobile-paragraph">Demo</a>
+    <p class="mobile-paragraph">Download for <a href="https://addons.mozilla.org/en-US/firefox/addon/g-switcher/" target="_blank">Firefox</a> | <a href="https://chrome.google.com/webstore/detail/g-switcher/fkpnpedmgcpjnmglbjckfjhnodoacnan" target="_blank">Chrome</a> </p>
+
+    <h1>Web team</h1>
+    <p class="mobile-paragraph">
+        I’m a member of the Lincoln Sudbury Web Team. We work to develop and maintain the school’s website. We also help teachers and faculty to maintain their class sites. Our largest project has been the complete migration in 2019 from Wordpress to School Sharp. This involved completely redoing the site. It was essential that no pages were lost, especially legal documents, so we had to take great care to make sure all pages were properly migrated. We also had to contact and work with a large number of faculty to move their pages to the new site.
+    </p>
+    <a href="https://lsrhs.net" target="_blank" class="mobile-paragraph">lsrhs.net</a>
+    <a href="https://www.lsrhs.net/students/activities_clubs/webteam" target="_blank" class="mobile-paragraph">Web Team page</a>
+
+    <h1>Code Ninjas</h1>
+    <p class="mobile-paragraph">
+        I’m an instructor at Code Ninjas Sudbury. I teach kids 7-14 how to code. We primarily teach game programming through Javascript, but during the summer we teach other skills during week long camps. I fully developed the curriculum for our web development camp, teaching HTML, CSS, and JavaScript. I also lead 2 <a href="https://www.firstlegoleague.org/" target="_blank">FLL</a> teams. FLL is a smaller version of the robotics competition I participate in. I participated in FLL myself for 5 years from 4th grade through 8th grade.
+    </p>
+
+    <script src="{{ url_for('static', filename='js/about.js') }}"></script>
+
+{% endblock %}

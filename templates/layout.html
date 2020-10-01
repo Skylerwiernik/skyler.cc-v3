@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Skyler.cc // {% block title %}{% endblock %}</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/layout.css') }}">
+    <link rel="shortcut icon" href="{{ url_for('static', filename='img/favicon.ico') }}" type="image/x-icon">
+    <link rel="icon" href="{{ url_for('static', filename='img/favicon.ico') }}" type="image/x-icon">
+
+    {#  Global site tag (gtag.js) - Google Analytics  #}
+{#    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-178456740-1"></script>#}
+
+
+</head>
+
+<body>
+
+    {#  Navbar  #}
+    <nav class="navbar navbar-expand-sm navbar-dark">
+        <a class="navbar-brand home" href="/">/ Skyler Wiernik /</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item">
+                    <a class="nav-link about" href="/about">About</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle lstoday g-switcher robotics video-projects web-team" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Projects
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item lstoday" href="/projects/lstoday">LSToday</a>
+                        <a class="dropdown-item g-switcher" href="/projects/g-switcher">G-Switcher</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item robotics" href="/projects/robotics">Robotics</a>
+                        <a class="dropdown-item video-projects" href="/projects/video-projects">Video Projects</a>
+                        <a class="dropdown-item web-team" href="projects/web-team">Web team</a>
+                    </div>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Connect
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="/out/github" target="_blank">
+                            <img src="{{url_for('static',filename='img/socialIcons/github.svg')}}" height="15px" />
+                            Github
+                        </a>
+                        <a class="dropdown-item" href="/out/linkedin" target="_blank">
+                            <img src="{{url_for('static',filename='img/socialIcons/linkedin.svg')}}" height="15px" />
+                            Linkedin
+                        </a>
+                        <a class="dropdown-item" href="/out/twitter" target="_blank">
+                            <img src="{{url_for('static',filename='img/socialIcons/twitter.svg')}}" height="15px" />
+                            Twitter
+                        </a>
+                    </div>
+
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link contact" href="/contact">Contact</a>
+                </li>
+
+            </ul>
+        </div>
+        <div class="navbar-collapse collapse w-100 order-3 dual-collapse2">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="/out/resume" target="_blank">Resume</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    {#  Content  #}
+    {% block content %}{% endblock %}
+    {#  Footer  #}
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>Z
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+
+    <script async src="{{ url_for("static", filename="js/track.js") }}"></script>
+    <style>
+        .{{ page }} {
+            font-weight: bold;
+        }
+    </style>
+
+
+</body>
+
+</html>

@@ -1,0 +1,99 @@
+.project-content {
+    padding-top: 30px;
+}
+
+.projects-nav {
+    border: black solid 5px;
+    border-radius: 10px;
+    width: 200px;
+    margin: 20px;
+    padding: 5px;
+    z-index: 1;
+    position: fixed;
+
+}
+
+.projects-nav h1 {
+    font-size: 36px;
+    padding-bottom: 3px;
+    border-bottom: gray solid 2px;
+    text-align: center;
+}
+
+.header {
+    padding-top: 5vh;
+    text-align: center;
+}
+
+.desktop-paragraph {
+    padding: 15px 100px;
+    font-size: 24px;
+    font-family: 'Poppins', sans-serif;
+}
+
+.mobile-paragraph {
+    padding: 15px 50px;
+    font-size: 16px;
+    font-family: 'Poppins', sans-serif;
+}
+
+.desktop-head {
+    display: flex;
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+    padding-bottom: 10px;
+}
+.desktop-head img{
+    width: 15%;
+    flex: 50%;
+}
+.mobile-head img {
+    width: 50vw;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+}
+.title {
+    text-align: center;
+    font-size: 48px;
+    font-weight: bold;
+    padding-bottom: 20px;
+}
+
+.side-badge {
+    width: 200px;
+    margin: 20px;
+    padding: 5px;
+    z-index: 1;
+    position: fixed;
+}
+
+.g-switcher-foot {
+    width: 50%;
+    margin-left: 40px;
+    display: block;
+}
+
+.g-switcher-foot img{
+    width: 200px;
+    padding: 10px;
+    margin-top: 0;
+}
+
+.lstoday-foot {
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    width: 200px;
+    padding-bottom: 30px;
+}
+
+.video-head {
+    margin-left: 20vw;
+    margin-right: 15vw;
+    display: block;
+}
+.video-head img,iframe {
+    width: 50vw;
+}

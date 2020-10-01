@@ -1,0 +1,6 @@
+nav {
+    background-image: linear-gradient(to right, #0930a5, #4a76f9, #8830a8);
+}
+nav .nav-link {
+    color: beige!important;
+}

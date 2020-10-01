@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>404</title>
+</head>
+<body>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" href="{{ url_for('static', filename='img/favicon.ico') }}" type="image/x-icon">
+    <link rel="icon" href="{{ url_for('static', filename='img/favicon.ico') }}" type="image/x-icon">
+    <h1 id="header" hidden>404</h1>
+    <style>
+        body {
+            height: 100vh;
+            overflow: hidden;
+            background-image: linear-gradient(to left, #0930a5, #4a76f9, #8830a8);
+        }
+        #header {
+            color: lightgray;
+            text-align: center;
+            font-size: calc(100px + 10vw);
+            font-family: 'Poppins', sans-serif;
+            margin-top: 10vh;
+            animation: ease 500ms flash infinite alternate-reverse;
+        }
+        @keyframes flash {
+            from {
+                opacity: 100%;
+            }
+            to {
+                opacity: 30%;
+            }
+        }
+    </style>
+    <script>
+        window.onload = async function() {
+            const header = document.getElementById("header")
+            header.hidden = false
+            await new Promise(r => setTimeout(r, 2500));
+
+            if (document.referrer.includes("skyler.cc")) {
+                window.location = window.referrer
+            }
+            else {
+                window.location = "https://skyler.cc"
+            }
+        }
+    </script>
+</body>
+</html>

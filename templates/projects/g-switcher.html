@@ -1,0 +1,37 @@
+{% extends "projects.html" %}
+
+{% block project_name %}G-Switcher{% endblock %}
+{% block side_badge %}
+    <a href="/out/g-switcher-chrome" target="_blank">
+        <img src="{{ url_for("static", filename="img/badges/chrome.png") }}" class="side-badge" style="margin-top: 500px"/>
+    </a>
+    <a href="/out/g-switcher-firefox" target="_blank">
+        <img src="{{ url_for("static", filename="img/badges/firefox.png") }}" class="side-badge" style="margin-top: 600px;"/>
+    </a>
+{% endblock %}
+{% block project_content %}
+    <div class="video-head">
+        <img src="{{ url_for('static', filename='img/g-switcher-banner.png') }}" style="padding-bottom: 10px;"/>
+        <iframe  src="https://www.youtube-nocookie.com/embed/wOrD7X3uIZY" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="height: calc(0.5625 * 50vw)"></iframe>
+    </div>
+
+    <p>
+    G-Switcher is a browser extension that I created for Firefox and Google Chrome. G-Switcher helps a user to easily switch between default Google Accounts. I designed this extension specifically for Google Classroom, but it also works with Gmail, Google Drive, and most other Google services.
+    </p>
+    <p>
+    During remote learning, I was frequently using Google Classroom. One issue that me, and most of my peers face, is that since we are on our personal computers, Google Classroom is defaulting to our personal accounts. This means that up to 10 times a day, you have to switch accounts just for Google Classroom!
+    </p>
+    <p>
+    This multiplies when you include Google Drive and Gmail. To solve this, I created G-Switcher. G-Switch lets you change your default Google account in only 1 click. It supports up to 10 Google Accounts, and works across both Chrome, and Firefox.
+    </p>
+    <p><a href="https://github.com/skylerwiernik/g-switcher" target="_blank">View the source code on GitHub</a></p>
+    <div class="g-switcher-foot" id="side-badge-mobile">
+        <a href="/out/g-switcher-chrome" target="_blank">
+            <img src="{{ url_for("static", filename="img/badges/chrome.png") }}"/>
+        </a>
+        <a href="/out/g-switcher-firefox" target="_blank">
+            <img src="{{ url_for("static", filename="img/badges/firefox.png") }}"/>
+        </a>
+    </div>
+
+{% endblock %}

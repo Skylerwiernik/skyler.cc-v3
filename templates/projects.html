@@ -1,0 +1,39 @@
+{% extends "layout.html" %}
+
+{% block title %}Project: {% block project_name %} {% endblock %} {% endblock %}
+
+
+{% block content %}
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/projects.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+
+    <div class="projects-nav">
+        <ul class="nav flex-column nav-pills">
+            <li class="nav-item">
+                <h1>Projects</h1>
+            </li>
+            <li class="nav-item">
+                <a href="/projects/lstoday" class="nav-link {% if page == "lstoday" %}active{% endif %}">LSToday</a>
+            </li>
+            <li class="nav-item">
+                <a href="/projects/g-switcher" class="nav-link {% if page == "g-switcher" %}active{% endif %}">G-Switcher</a>
+            </li>
+            <li class="nav-item">
+                <a href="/projects/robotics" class="nav-link {% if page == "robotics" %}active{% endif %}">Robotics</a>
+            </li>
+            <li class="nav-item">
+                <a href="/projects/video-projects" class="nav-link {% if page == "video-projects" %}active{% endif %}">Video Projects</a>
+            </li>
+            <li class="nav-item">
+                <a href="/projects/web-team" class="nav-link {% if page == "web-team" %}active{% endif %}">Web Team</a>
+            </li>
+        </ul>
+    </div>
+    {% block side_badge %}{% endblock %}
+    <div class="project-content" style="display: none;">
+        {% block project_content %}{% endblock %}
+    </div>
+    <script src="{{ url_for('static', filename='js/projects.js') }}"></script>
+
+
+{% endblock %}
