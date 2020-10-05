@@ -69,5 +69,9 @@ def contact():
         return render_template("contact.html", page="contact", success=False)
 
 
+@app.route("/debug/version")
+def version():
+    return open("version.txt", "r").read()
+
 if __name__ == '__main__':
     app.run()
