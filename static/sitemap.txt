@@ -1,0 +1,8 @@
+skyler.cc
+skyler.cc/projects/web-team
+skyler.cc/projects/robotics
+skyler.cc/projects/g-switcher
+skyler.cc/projects/lstoday
+skyler.cc/projects/video-projects
+skyler.cc/contact
+https://skyler.cc/static/resume.pdf
