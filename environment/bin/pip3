@@ -1,4 +1,4 @@
-#!/Users/skyler/Desktop/Skyler.cc-V3/environment/bin/python
+#!/home/skyler/site/environment/bin/python3
 # -*- coding: utf-8 -*-
 import re
 import sys

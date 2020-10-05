@@ -1,14 +1,10 @@
 import os, smtplib, ssl
 import requests
 from flask import Flask, render_template, request
-
+from exports import exports
 app = Flask(__name__)
 
-enviorment_var_keys = ["reCAPTCHA_secret", "server_mail_password"]
 
-for key in enviorment_var_keys:
-    if not os.environ.get(key):
-        raise RuntimeError("Missing environment key ", key)
 
 
 
@@ -50,7 +46,7 @@ def contact():
         return render_template("contact.html", page="contact", success=None)
 
     reCAPTCHAresponse = requests.post("https://www.google.com/recaptcha/api/siteverify", data={
-        "secret": os.environ.get("reCAPTCHA_secret"),
+        "secret": exports["reCAPTCHA_secret"],
         "response": request.form.get("g-recaptcha-response"),
         "remoteip": request.remote_addr
     }).json()
@@ -61,8 +57,7 @@ def contact():
         smtp_server = "box.skyler.cc"
         sender_email = "server@skyler.cc"
         receiver_email = "skyler@skyler.cc"
-        password = os.environ.get("server_mail_password")
-
+	passowrd = exports["server_mail_password"]
         message = f"""From: {request.form.get("name")} <server@skyler.cc>\nTo: Skyler Wiernik <{receiver_email}>\nReply-To:{request.form.get("email")}\nSubject: Email via contact form at skyler.cc/contact! (reCAPTCHA score: {str(reCAPTCHAresponse["score"])})\n\n{request.form.get("message")}\nSend response to: {request.form.get("email")}\nUID = {request.form.get("uid")}"""
         context = ssl.SSLContext(ssl.PROTOCOL_TLS)
         connection = smtplib.SMTP(smtp_server, port)
