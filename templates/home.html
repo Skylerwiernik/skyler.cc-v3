@@ -33,5 +33,11 @@
             background-color: #002;
         }
     </style>
-
+    <script>
+        window.onload = function () {
+            if (window.innerWidth < window.innerHeight) {
+                $("#title").css("line-spacing", "1px")
+            }
+        }
+    </script>
 {%  endblock %}
