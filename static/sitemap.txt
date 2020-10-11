@@ -1,4 +1,5 @@
 https://skyler.cc
+https://skyler.cc/about
 https://skyler.cc/projects/web-team
 https://skyler.cc/projects/robotics
 https://skyler.cc/projects/g-switcher
