@@ -3,19 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <title>Redirecting...</title>
-    <!-- Global site tag (gtag.js) - Google Analytics -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script async src="{{ url_for("static", filename="js/track.js") }}"></script>
-    <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-
-    gtag('config', 'UA-178456740-1');
-    </script>
+    <script src="{{ url_for("static", filename="js/track.js") }}"></script>
 </head>
 <body>
-    <p>redirecting...</p>
 </body>
 <script>
     async function redirect() {
@@ -23,7 +14,8 @@
         await new Promise(r => setTimeout(r, 2500));
         window.close()
     }
-    redirect()
-
+    window.onload = function () {
+        redirect()
+    }
 </script>
 </html>
