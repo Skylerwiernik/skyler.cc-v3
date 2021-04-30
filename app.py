@@ -68,6 +68,17 @@ def contact():
     else:
         return render_template("contact.html", page="contact", success=False)
 
+@app.route("/lstoday/privacy")
+def lstodayPrivacy():
+   return render_template("out.html", externalLink="https://docs.google.com/document/d/1ER7pOZfww2bzjiLFC_zFnS3EK_b69Uip4dOJ0-HIadA/edit?usp=sharing")
+
+@app.route("/lstoday/terms")
+def lstodayTerms():
+    return render_template("out.html", externalLink="https://docs.google.com/document/d/1sxxzSVaGb1wtm1_MfVDgiWnXOTxmSzLD701fSiI6P0Y/edit?usp=sharing")
+
+@app.route("/lstoday")
+def lstoday():
+    return flask.redirect("https://skyler.cc/out/lstoday")
 
 @app.route("/debug/version")
 def version():
