@@ -2,6 +2,7 @@ import os, smtplib, ssl
 import requests
 from flask import Flask, render_template, request
 from exports import exports
+import mailer
 app = Flask(__name__)
 
 
@@ -50,18 +51,34 @@ def contact():
         "response": request.form.get("g-recaptcha-response"),
         "remoteip": request.remote_addr
     }).json()
+    print(reCAPTCHAresponse)
     if not reCAPTCHAresponse["success"]:
         return render_template("contact.html", page="contact", success=False)
     if reCAPTCHAresponse["score"] > 0.5:
         port = 587
-        smtp_server = "box.skyler.cc"
+        smtp_server = "mailbox.skyler.cc"
         sender_email = "server@skyler.cc"
         receiver_email = "skyler@skyler.cc"
-        passowrd = exports["server_mail_password"]
-        message = f"""From: {request.form.get("name")} <server@skyler.cc>\nTo: Skyler Wiernik <{receiver_email}>\nReply-To:{request.form.get("email")}\nSubject: Email via contact form at skyler.cc/contact! (reCAPTCHA score: {str(reCAPTCHAresponse["score"])})\n\n{request.form.get("message")}\nSend response to: {request.form.get("email")}\nUID = {request.form.get("uid")}"""
+        password = exports["server_mail_password"]
+
+        name = request.form.get("name")
+        email = request.form.get("email")
+        body = request.form.get("message")
+        uid = request.form.get("uid")
+        # message = ("From: {request.form.get("name")} <server@skyler.cc>\nTo: Skyler Wiernik <{receiver_email}>\nReply-To:{request.form.get("email")}\nSubject: Email via contact form at skyler.cc/contact!\n\n{request.form.get("message")}\nSend response to: {request.form.get("email")}\nUID = {request.form.get("uid")}")
+        message = ("From: {name} <{sender_email}>\n"
+                   "To: Skyler Wiernik <{receiver_email}>\n"
+                   "Reply-To:{email}\n"
+                   "Subject: Email via contact form at skyler.cc/contact!\n\n"
+                   "{body}\n\n"
+                   "--\n"
+                   "Send response to {email}\n"
+                   "UID: {uid}"
+                   ).format(name=name, sender_email=sender_email, receiver_email=receiver_email, email=email, body=body, uid=uid)
         context = ssl.SSLContext(ssl.PROTOCOL_TLS)
         connection = smtplib.SMTP(smtp_server, port)
-        connection.starttls(context=context)
+        # connection.starttls(context=context)
+        connection.starttls()
         connection.login(sender_email, password)
         connection.sendmail(sender_email, receiver_email, message)
         return render_template("contact.html", page="contact", success=True)
