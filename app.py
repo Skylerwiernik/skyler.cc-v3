@@ -56,7 +56,7 @@ def contact():
         return render_template("contact.html", page="contact", success=False)
     if reCAPTCHAresponse["score"] > 0.5:
         port = 587
-        smtp_server = "mailbox.skyler.cc"
+        smtp_server = "smtppro.zoho.com"
         sender_email = "server@skyler.cc"
         receiver_email = "skyler@skyler.cc"
         password = exports["server_mail_password"]
@@ -84,6 +84,12 @@ def contact():
         return render_template("contact.html", page="contact", success=True)
     else:
         return render_template("contact.html", page="contact", success=False)
+
+
+@app.rputer("/mail")
+def mail():
+    return render_template("mail.html")
+
 
 @app.route("/lstoday/privacy")
 def lstodayPrivacy():
